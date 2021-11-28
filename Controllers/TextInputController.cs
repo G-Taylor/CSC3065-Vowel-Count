@@ -26,6 +26,7 @@ namespace editor_vowel_count.Controllers
                 }
             );
 
+            Response.Headers.Add("Access-Control-Allow-Origin", "*");
             return response.ToLower();
         }
     }
