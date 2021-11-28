@@ -1,0 +1,11 @@
+image: mcr.microsoft.com/dotnet/aspnet:6.0
+
+stages:
+  - build
+
+build:
+  stage: build
+  script:
+    - dotnet restore editor-vowel-count/editor-vowel-count.csproj
+    - dotnet build editor-vowel-count.csproj -c Release
+    - dotnet publish editor-vowel-count.csproj -c Release
