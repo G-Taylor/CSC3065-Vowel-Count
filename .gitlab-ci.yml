@@ -6,4 +6,5 @@ build:
   image: mcr.microsoft.com/dotnet/sdk:latest
   script:
     - dotnet restore "editor-vowel-count.csproj"
+    - dotnet build "editor-vowel-count.csproj" -c Release
     - dotnet publish editor-vowel-count.csproj -c Release
