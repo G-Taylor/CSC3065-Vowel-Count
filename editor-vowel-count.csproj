@@ -1,8 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <TargetFramework>netcoreapp6.0</TargetFramework>
     <AssemblyName>editor_vowel_count</AssemblyName>
+    <LangVersion>latest</LangVersion>
     <RootNamespace>editor_vowel_count</RootNamespace>
   </PropertyGroup>
 

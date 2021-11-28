@@ -35,7 +35,7 @@ namespace editor_vowel_count
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            
             app.UseHttpsRedirection();
 
             app.UseRouting();
