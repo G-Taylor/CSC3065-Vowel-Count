@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using System.Text;
+﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
 namespace editor_vowel_count.Controllers
@@ -15,19 +10,32 @@ namespace editor_vowel_count.Controllers
         [HttpGet]
         public string Get([FromQuery(Name = "text")] string text)
         {
-            VowelCount vc = new VowelCount();
-            int numOfVowels = vc.NumberOfVowels(text);
-
-            var response = JsonConvert.SerializeObject(
+    
+            if( text == null) {
+                var responseNull = JsonConvert.SerializeObject(
                 new{
-                    error = "false",
-                    sentence = text,
-                    answer = numOfVowels
+                    error = "true",
+                    sentence = "No input detected. Please enter a sentence",
+                    answer = "0"
                 }
             );
+                Response.Headers.Add("Access-Control-Allow-Origin", "*");
+                return responseNull;
+            } else {
+                VowelCount vc = new VowelCount();
+                int numOfVowels = vc.NumberOfVowels(text);
 
-            Response.Headers.Add("Access-Control-Allow-Origin", "*");
-            return response;
+                var response = JsonConvert.SerializeObject(
+                    new{
+                        error = "false",
+                        sentence = text,
+                        answer = numOfVowels
+                    }
+                );
+
+                Response.Headers.Add("Access-Control-Allow-Origin", "*");
+                return response;
+            }
         }
     }
 }
