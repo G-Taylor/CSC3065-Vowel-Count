@@ -37,6 +37,7 @@ namespace editor_vowel_count
                 app.UseDeveloperExceptionPage();
             } 
 
+            // Check the response code, and if not 200, redirect to the error page
             app.Use(async(context, next) =>
             {
                 await next();
