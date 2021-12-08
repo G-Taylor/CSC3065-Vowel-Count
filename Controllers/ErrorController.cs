@@ -11,7 +11,7 @@ namespace editor_vowel_count.Controllers
         {
             var response = JsonConvert.SerializeObject(
                 new{
-                    error = true,
+                    error = "true",
                     sentence = "Incorrect Parameters",
                     answer = "0"
                 }
