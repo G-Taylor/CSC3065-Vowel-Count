@@ -14,7 +14,7 @@ namespace editor_vowel_count.Controllers
             if( text == null) {
                 var responseNull = JsonConvert.SerializeObject(
                 new{
-                    error = true,
+                    error = "true",
                     sentence = "No input detected. Please enter a sentence",
                     answer = "0"
                 }
@@ -27,7 +27,7 @@ namespace editor_vowel_count.Controllers
 
                 var response = JsonConvert.SerializeObject(
                     new{
-                        error = false,
+                        error = "false",
                         sentence = text,
                         answer = numOfVowels
                     }
